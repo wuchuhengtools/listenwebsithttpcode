@@ -115,7 +115,7 @@ class index
         $httpdStatusCode = $this->httpStatusCode($url);
         if($httpdStatusCode !== 200 ){
             $subject = '警报!!!监听的网站不能访问了,请做好准备，马上出发';
-            $date = date('Y-m-d H:s:i',time());
+            $date = date('Y-m-d H:i:s',time());
             $body    = "网址{$url}在{$date}不能正常访问,状态码:{$httpdStatusCode}，请尽快修复！我觉得我还可以抢救一下^_^";
             $this->errorLog($body,'error');
             if(in_array($httpdStatusCode,[400,401,404])){
